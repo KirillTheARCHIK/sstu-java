@@ -1,7 +1,11 @@
 package app;
 
+import app.utils.Utils;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("\n----------------------------PROGRAM STARTED----------------------------\n");
+        Utils.clearConsole();
+        System.out.println("\n----------------------------PROGRAM STARTED-----------------------------\n");
+        System.out.println("\n----------------------------PROGRAM FINISHED----------------------------\n");
     }
 }
