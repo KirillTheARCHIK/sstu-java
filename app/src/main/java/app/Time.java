@@ -1,15 +1,21 @@
 package app;
 
 public class Time {
-  public Integer hours;
-  public Integer minutes;
-  public Integer seconds;
+  public final Integer hours;
+  public final Integer minutes;
+  public final Integer seconds;
 
   public Time(Integer seconds) {
     seconds %= (24 * 60 * 60);
     this.hours = seconds / (60 * 60);
     this.minutes = seconds / 60 % 60;
     this.seconds = seconds % 60;
+  }
+
+  public Time(Integer hours, Integer minutes, Integer seconds) {
+    this.hours = hours;
+    this.minutes = minutes;
+    this.seconds = seconds;
   }
 
   @Override
