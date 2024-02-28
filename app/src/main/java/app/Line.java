@@ -18,4 +18,8 @@ public class Line {
   public String toString() {
     return String.format("Линия от %s до %s", start, end);
   }
+
+  public Double distance() {
+    return Math.sqrt(Math.pow(end.x - start.x, 2) + Math.pow(end.y - start.y, 2));
+  }
 }
