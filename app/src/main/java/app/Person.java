@@ -1,10 +1,10 @@
 package app;
 
 public class Person {
-  String name;
+  Name name;
   int height;
 
-  public Person(String name, int height) {
+  public Person(Name name, int height) {
     this.name = name;
     this.height = height;
   }
