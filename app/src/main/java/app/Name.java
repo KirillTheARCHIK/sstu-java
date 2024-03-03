@@ -5,6 +5,15 @@ public class Name {
   String firstName;
   String patronymic;
 
+  public Name(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public Name(String firstName, String lastName) {
+    this.lastName = lastName;
+    this.firstName = firstName;
+  }
+
   public Name(String firstName, String lastName, String patronymic) {
     this.lastName = lastName;
     this.firstName = firstName;
@@ -15,9 +24,9 @@ public class Name {
   public String toString() {
     String str = "";
     if (lastName != null) {
-      str += lastName;
+      str += lastName + " ";
     }
-    str += " " + firstName;
+    str += firstName;
     if (patronymic != null) {
       str += " " + patronymic;
     }
