@@ -8,12 +8,13 @@ public class App {
     public static void main(String[] args) {
         Utils.clearConsole();
         System.out.println("\n----------------------------PROGRAM STARTED-----------------------------\n");
+        var lev = new Person("Лев", 170);
+        var sergey = new Person(new Name("Сергей", "Пушкин"), 168, lev);
+        var alex = new Person("Александр", 167, sergey);
         var persons = List.of(
-                new Person(new Name("Иван", "Чудов", null), 180),
-                new Person(new Name("Петр", "Чудов", null), 179),
-                new Person(new Name("Борис", null, null), 181));
-        persons.get(1).setFather(persons.get(0));
-        persons.get(2).setFather(persons.get(1));
+                lev,
+                sergey,
+                alex);
         for (Person person : persons) {
             System.out.println(person);
         }
