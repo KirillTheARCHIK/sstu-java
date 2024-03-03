@@ -5,9 +5,7 @@ public class Name {
   String firstName;
   String patronymic;
 
-  public Name(String lastName,
-      String firstName,
-      String patronymic) {
+  public Name(String firstName, String lastName, String patronymic) {
     this.lastName = lastName;
     this.firstName = firstName;
     this.patronymic = patronymic;
