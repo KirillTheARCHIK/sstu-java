@@ -1,6 +1,6 @@
 package app;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class City {
   String name;
@@ -9,6 +9,11 @@ public class City {
   public City(String name) {
     this.name = name;
     cityLinks = new ArrayList<>();
+  }
+
+  public City(String name, ArrayList<CityLink> cityLinks) {
+    this.name = name;
+    this.cityLinks = cityLinks;
   }
 
   @Override
