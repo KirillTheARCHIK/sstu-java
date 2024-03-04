@@ -4,14 +4,14 @@ import java.util.*;
 
 public class City {
   String name;
-  ArrayList<CityLink> cityLinks;
+  List<CityLink> cityLinks;
 
   public City(String name) {
     this.name = name;
     cityLinks = new ArrayList<>();
   }
 
-  public City(String name, ArrayList<CityLink> cityLinks) {
+  public City(String name, List<CityLink> cityLinks) {
     this.name = name;
     this.cityLinks = cityLinks;
   }
