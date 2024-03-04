@@ -20,4 +20,19 @@ public class Student {
   public String toString() {
     return name + " " + marks;
   }
+
+  public double getAvgMark() {
+    if (marks.size() == 0) {
+      return 0;
+    }
+    int sum = 0;
+    for (Integer integer : marks) {
+      sum += integer;
+    }
+    return (double) sum / marks.size();
+  }
+
+  public Boolean isOtl() {
+    return getAvgMark() == 5;
+  }
 }
