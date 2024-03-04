@@ -22,4 +22,16 @@ public class Time {
   public String toString() {
     return String.format("%d:%02d:%02d", hours, minutes, seconds);
   }
+
+  Integer getHours() {
+    return hours;
+  }
+
+  Integer getMinutes() {
+    return minutes;
+  }
+
+  Integer getSeconds() {
+    return seconds;
+  }
 }
