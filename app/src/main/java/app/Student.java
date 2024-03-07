@@ -7,19 +7,38 @@ public class Student {
   List<Integer> marks;
 
   public Student(String name) {
-    this.name = name;
-    this.marks = new ArrayList<Integer>();
+    setName(name);
+    // setMarks(new ArrayList<Integer>());
   }
 
   public Student(String name, List<Integer> marks) {
-    this.name = name;
-    this.marks = marks;
+    setName(name);
+    // setMarks(marks);
   }
 
   @Override
   public String toString() {
     return name + " " + marks;
   }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public List<Integer> getMarks() {
+    return marks;
+  }
+
+  // public void setMarks(List<Integer> marks) {
+  // if (marks.stream().anyMatch((int mark){return mark<2 || mark>5})) {
+  // throw new Exception();
+  // }
+  // this.marks = marks;
+  // }
 
   public double getAvgMark() {
     if (marks.size() == 0) {
