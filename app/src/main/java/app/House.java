@@ -1,10 +1,10 @@
 package app;
 
 public class House {
-  final int floors;
+  int floors;
 
-  public House(int floors) {
-    this.floors = floors;
+  public House(int floors) throws Exception {
+    setFloors(floors);
   }
 
   @Override
@@ -16,5 +16,16 @@ public class House {
       str += "ами";
     }
     return str;
+  }
+
+  public int getFloors() {
+    return floors;
+  }
+
+  public void setFloors(int floors) throws Exception {
+    if (floors < 1) {
+      throw new Exception();
+    }
+    this.floors = floors;
   }
 }
