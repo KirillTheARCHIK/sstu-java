@@ -5,7 +5,7 @@ import java.util.List;
 import app.utils.Utils;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Utils.clearConsole();
         System.out.println("\n----------------------------PROGRAM STARTED-----------------------------\n");
         City A = new City("A");
