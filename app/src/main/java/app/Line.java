@@ -1,16 +1,40 @@
 package app;
 
 public class Line {
-  public final Point start;
-  public final Point end;
+  private Point start;
+  private Point end;
 
-  public Line(Point start, Point end) {
-    this.start = start;
-    this.end = end;
+  public Line(Point start, Point end) throws Exception {
+    setStart(start);
+    setEnd(end);
   }
 
-  public Line(int x1, int y1, int x2, int y2) {
-    this(new Point(x1, y1),new Point(x2, y2));
+  public Line(int x1, int y1, int x2, int y2) throws Exception {
+    this(new Point(x1, y1), new Point(x2, y2));
+  }
+
+  public Point getStart() {
+    return start;
+  }
+
+  public void setStart(Point start) throws Exception {
+    if (start.contains != this) {
+      throw new Exception("Point already used");
+    }
+    this.start = start;
+    start.contains = this;
+  }
+
+  public Point getEnd() {
+    return end;
+  }
+
+  public void setEnd(Point end) throws Exception {
+    if (end.contains != this) {
+      throw new Exception("Point already used");
+    }
+    this.end = end;
+    end.contains = this;
   }
 
   @Override
