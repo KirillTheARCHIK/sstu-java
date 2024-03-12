@@ -6,14 +6,14 @@ public class Student {
   String name;
   List<Integer> marks;
 
-  public Student(String name) {
+  public Student(String name) throws Exception {
     setName(name);
-    // setMarks(new ArrayList<Integer>());
+    setMarks(new ArrayList<Integer>());
   }
 
-  public Student(String name, List<Integer> marks) {
+  public Student(String name, List<Integer> marks) throws Exception {
     setName(name);
-    // setMarks(marks);
+    setMarks(marks);
   }
 
   @Override
@@ -33,12 +33,12 @@ public class Student {
     return marks;
   }
 
-  // public void setMarks(List<Integer> marks) {
-  // if (marks.stream().anyMatch((int mark){return mark<2 || mark>5})) {
-  // throw new Exception();
-  // }
-  // this.marks = marks;
-  // }
+  public void setMarks(List<Integer> marks) throws Exception {
+    if (marks.stream().anyMatch((Integer mark) -> mark < 2 || mark > 5)) {
+      throw new Exception();
+    }
+    this.marks = marks;
+  }
 
   public double getAvgMark() {
     if (marks.size() == 0) {

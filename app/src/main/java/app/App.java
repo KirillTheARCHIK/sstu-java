@@ -4,7 +4,7 @@ import app.utils.Utils;
 import java.util.*;;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Utils.clearConsole();
         System.out.println("\n----------------------------PROGRAM STARTED-----------------------------\n");
         var marks = new ArrayList<Integer>(List.of(3, 4, 5));
