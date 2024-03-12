@@ -1,22 +1,24 @@
 package app;
 
 public class Name {
+  final String firstName;
   String lastName;
-  String firstName;
   String patronymic;
 
-  public Name(String firstName) {
+  public Name(String firstName) throws Exception {
+    if (firstName == null || firstName == "") {
+      throw new Exception();
+    }
     this.firstName = firstName;
   }
 
-  public Name(String firstName, String lastName) {
+  public Name(String firstName, String lastName) throws Exception {
+    this(firstName);
     this.lastName = lastName;
-    this.firstName = firstName;
   }
 
-  public Name(String firstName, String lastName, String patronymic) {
-    this.lastName = lastName;
-    this.firstName = firstName;
+  public Name(String firstName, String lastName, String patronymic) throws Exception {
+    this(firstName, lastName);
     this.patronymic = patronymic;
   }
 
