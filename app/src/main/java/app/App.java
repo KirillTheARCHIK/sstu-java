@@ -3,7 +3,7 @@ package app;
 import app.utils.Utils;
 
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Utils.clearConsole();
         System.out.println("\n----------------------------PROGRAM STARTED-----------------------------\n");
         var f1 = new Fraction(1, 3);
