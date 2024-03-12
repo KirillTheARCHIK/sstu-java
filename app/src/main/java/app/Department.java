@@ -9,15 +9,22 @@ public class Department {
   ArrayList<Employee> employees;
 
   public Department(String name, Employee chief, List<Employee> otherEmployees) {
-    this.name = name;
-    this.chief = chief;
-
     employees = new ArrayList<>();
-    employees.add(chief);
+
+    this.name = name;
+    setChief(chief);
+
     employees.addAll(otherEmployees);
     for (int index = 0; index < employees.size(); index++) {
       var employee = employees.get(index);
       employee.department = this;
+    }
+  }
+
+  public void setChief(Employee chief) {
+    this.chief = chief;
+    if (!employees.contains(chief)) {
+      employees.add(chief);
     }
   }
 }
