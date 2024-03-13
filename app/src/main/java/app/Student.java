@@ -3,8 +3,8 @@ package app;
 import java.util.*;
 
 public class Student {
-  String name;
-  List<Integer> marks;
+  private String name;
+  private List<Integer> marks;
 
   public Student(String name) throws Exception {
     setName(name);
