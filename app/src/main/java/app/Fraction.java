@@ -1,6 +1,6 @@
 package app;
 
-public class Fraction {
+public class Fraction extends Number {
   private int numerator;
   private int denominator;
 
@@ -51,5 +51,25 @@ public class Fraction {
 
   public Fraction div(Fraction other) throws Exception {
     return mul(new Fraction(other.denominator, other.numerator));
+  }
+
+  @Override
+  public double doubleValue() {
+    return (double) numerator / denominator;
+  }
+
+  @Override
+  public float floatValue() {
+    return (float) numerator / denominator;
+  }
+
+  @Override
+  public int intValue() {
+    return numerator / denominator;
+  }
+
+  @Override
+  public long longValue() {
+    return numerator / denominator;
   }
 }
