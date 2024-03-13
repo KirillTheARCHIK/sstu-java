@@ -11,6 +11,6 @@ public class CityLink {
 
   @Override
   public String toString() {
-    return to.name + ": " + cost;
+    return to.getName() + ": " + cost;
   }
 }

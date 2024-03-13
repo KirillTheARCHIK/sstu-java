@@ -3,10 +3,10 @@ package app;
 import java.util.ArrayList;
 
 public class City {
-  String name;
-  ArrayList<CityLink> cityLinks;
+  private String name;
+  private ArrayList<CityLink> cityLinks;
 
-  public City(String name) throws Exception {
+  public City(String name) {
     setName(name);
     setCityLinks(new ArrayList<>());
   }
@@ -23,16 +23,16 @@ public class City {
     return cityLinks;
   }
 
-  public void setCityLinks(ArrayList<CityLink> cityLinks) throws Exception {
+  public void setCityLinks(ArrayList<CityLink> cityLinks) {
     this.cityLinks = new ArrayList<>();
     for (CityLink cityLink : cityLinks) {
       addCityLink(cityLink);
     }
   }
 
-  public void addCityLink(CityLink cityLink) throws Exception {
+  public void addCityLink(CityLink cityLink) {
     if (cityLinks.stream().anyMatch(cl -> cl.to == cityLink.to)) {
-      throw new Exception();
+      return;
     }
     cityLinks.add(cityLink);
   }
