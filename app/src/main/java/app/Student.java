@@ -18,7 +18,7 @@ public class Student {
 
   @Override
   public String toString() {
-    return name + " " + marks;
+    return getName() + " " + getMarks();
   }
 
   public String getName() {
@@ -34,21 +34,22 @@ public class Student {
   }
 
   public void setMarks(List<Integer> marks) throws Exception {
-    if (marks.stream().anyMatch((Integer mark) -> mark < 2 || mark > 5)) {
+    var marksCopy = List.copyOf(marks);
+    if (marksCopy.stream().anyMatch((Integer mark) -> mark < 2 || mark > 5)) {
       throw new Exception();
     }
-    this.marks = marks;
+    this.marks = marksCopy;
   }
 
   public double getAvgMark() {
-    if (marks.size() == 0) {
+    if (getMarks().size() == 0) {
       return 0;
     }
     int sum = 0;
-    for (Integer integer : marks) {
+    for (Integer integer : getMarks()) {
       sum += integer;
     }
-    return (double) sum / marks.size();
+    return (double) sum / getMarks().size();
   }
 
   public Boolean isOtl() {
