@@ -1,6 +1,6 @@
 package app;
 
-public class Point3D extends Point {
+public class Point3D extends Point2D {
   private int z;
 
   Point3D(int x, int y, int z) {
