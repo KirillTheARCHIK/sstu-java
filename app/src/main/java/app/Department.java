@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Department {
-  String name;
-  Employee chief;
-  ArrayList<Employee> employees;
+  private String name;
+  private Employee chief;
+  private List<Employee> employees;
 
   public Department(String name, Employee chief, List<Employee> otherEmployees) {
-    employees = new ArrayList<>();
-
-    this.name = name;
+    setName(name);
     setChief(chief);
 
+    var employees = new ArrayList<Employee>();
     employees.addAll(otherEmployees);
     for (int index = 0; index < employees.size(); index++) {
       var employee = employees.get(index);
-      employee.department = this;
+      employee.setDepartment(this);
     }
+    setEmployees(employees);
   }
 
   public String getName() {
@@ -40,11 +40,11 @@ public class Department {
     }
   }
 
-  public ArrayList<Employee> getEmployees() {
-    return employees;
+  public List<Employee> getEmployees() {
+    return List.copyOf(employees);
   }
 
   public void setEmployees(ArrayList<Employee> employees) {
-    this.employees = employees;
+    this.employees = List.copyOf(employees);
   }
 }

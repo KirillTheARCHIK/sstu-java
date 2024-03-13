@@ -12,7 +12,7 @@ public class App {
         Department department = new Department("IT", new Employee("Козлов"), List.of(
                 petrov,
                 new Employee("Сидоров")));
-        for (Employee employee : petrov.department.employees) {
+        for (Employee employee : petrov.getDepartment().getEmployees()) {
             System.out.println(employee);
         }
         System.out.println("\n----------------------------PROGRAM FINISHED----------------------------\n");
