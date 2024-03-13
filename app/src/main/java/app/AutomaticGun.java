@@ -3,15 +3,19 @@ package app;
 public class AutomaticGun extends Gun {
   private int rateOfFire;
 
-  public AutomaticGun() {
+  public AutomaticGun() throws Exception {
     super(30);
-    setCapacity(30);
+    setRateOfFire(30);
   }
 
-  public
-
-  public AutomaticGun(int capacity) {
+  public AutomaticGun(int capacity) throws Exception {
     super(capacity);
+    setRateOfFire(capacity / 2);
+  }
+
+  public AutomaticGun(int capacity, int rateOfFire) throws Exception {
+    super(capacity);
+    setRateOfFire(rateOfFire);
   }
 
   public int getRateOfFire() {
@@ -29,6 +33,12 @@ public class AutomaticGun extends Gun {
   public void fire() {
     for (int i = 0; i < rateOfFire; i++) {
       super.fire();
+    }
+  }
+
+  public void fireSeconds(int seconds) {
+    for (int i = 0; i < seconds; i++) {
+      fire();
     }
   }
 }
