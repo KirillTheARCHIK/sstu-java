@@ -1,14 +1,14 @@
 package app;
 
 public class Fraction {
-  int numerator;
-  int denominator;
+  private int numerator;
+  private int denominator;
 
-  Fraction(int numerator) throws Exception {
+  public Fraction(int numerator) throws Exception {
     this(numerator, 1);
   }
 
-  Fraction(int numerator, int denominator) throws Exception {
+  public Fraction(int numerator, int denominator) throws Exception {
     setNumerator(numerator);
     setDenominator(denominator);
   }
@@ -17,8 +17,7 @@ public class Fraction {
     return numerator;
   }
 
-  void setNumerator(int numerator) {
-
+  private void setNumerator(int numerator) {
     this.numerator = numerator;
   }
 
@@ -26,7 +25,7 @@ public class Fraction {
     return denominator;
   }
 
-  void setDenominator(int denominator) throws Exception {
+  private void setDenominator(int denominator) throws Exception {
     if (numerator <= 0) {
       throw new Exception();
     }
@@ -38,19 +37,19 @@ public class Fraction {
     return numerator + "/" + denominator;
   }
 
-  Fraction sum(Fraction other) throws Exception {
+  public Fraction sum(Fraction other) throws Exception {
     return new Fraction(numerator * other.denominator + other.numerator * denominator, denominator * other.denominator);
   }
 
-  Fraction sub(Fraction other) throws Exception {
+  public Fraction sub(Fraction other) throws Exception {
     return sum(new Fraction(-other.numerator, other.denominator));
   }
 
-  Fraction mul(Fraction other) throws Exception {
+  public Fraction mul(Fraction other) throws Exception {
     return new Fraction(numerator * other.numerator, denominator * other.denominator);
   }
 
-  Fraction div(Fraction other) throws Exception {
+  public Fraction div(Fraction other) throws Exception {
     return mul(new Fraction(other.denominator, other.numerator));
   }
 }
