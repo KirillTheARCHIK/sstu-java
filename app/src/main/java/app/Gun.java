@@ -1,12 +1,17 @@
 package app;
 
-public class Gun {
+abstract public class Gun {
   private int ammo;
   private int capacity;
 
   public Gun(int capacity) {
     setCapacity(capacity);
     setAmmo(0);
+  }
+
+  public Gun(int capacity, int ammo) {
+    setCapacity(capacity);
+    setAmmo(ammo);
   }
 
   public int getAmmo() {

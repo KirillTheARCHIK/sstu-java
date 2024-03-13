@@ -6,7 +6,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         Utils.clearConsole();
         System.out.println("\n----------------------------PROGRAM STARTED-----------------------------\n");
-        var gun = new Gun(7);
+        var gun = new Handgun(7);
         gun.addAmmo(3);
         for (int i = 0; i < 5; i++) {
             gun.fire();
