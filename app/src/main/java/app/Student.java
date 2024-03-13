@@ -30,7 +30,7 @@ public class Student {
   }
 
   public List<Integer> getMarks() {
-    return marks;
+    return List.copyOf(marks);
   }
 
   public void setMarks(List<Integer> marks) throws Exception {
