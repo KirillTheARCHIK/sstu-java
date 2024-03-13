@@ -21,10 +21,30 @@ public class Department {
     }
   }
 
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public Employee getChief() {
+    return chief;
+  }
+
   public void setChief(Employee chief) {
     this.chief = chief;
     if (!employees.contains(chief)) {
       employees.add(chief);
     }
+  }
+
+  public ArrayList<Employee> getEmployees() {
+    return employees;
+  }
+
+  public void setEmployees(ArrayList<Employee> employees) {
+    this.employees = employees;
   }
 }
