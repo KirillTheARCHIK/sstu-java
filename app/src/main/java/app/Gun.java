@@ -21,7 +21,7 @@ public class Gun {
     return capacity;
   }
 
-  void setCapacity(int capacity) {
+  protected void setCapacity(int capacity) {
     this.capacity = capacity;
   }
 
@@ -36,7 +36,7 @@ public class Gun {
     setAmmo(getAmmo() + ammo > capacity - getAmmo() ? capacity - getAmmo() : ammo);
   }
 
-  public void Fire() {
+  public void fire() {
     if (ammo > 0) {
       System.out.println("Бах!");
       ammo--;

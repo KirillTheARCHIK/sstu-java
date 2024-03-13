@@ -9,14 +9,14 @@ public class App {
         var gun = new Gun(7);
         gun.addAmmo(3);
         for (int i = 0; i < 5; i++) {
-            gun.Fire();
+            gun.fire();
         }
         gun.addAmmo(8);
         for (int i = 0; i < 2; i++) {
-            gun.Fire();
+            gun.fire();
         }
         gun.setAmmo(0);
-        gun.Fire();
+        gun.fire();
         System.out.println("\n----------------------------PROGRAM FINISHED----------------------------\n");
     }
 }
