@@ -17,4 +17,12 @@ public class PolyLine {
   public String toString() {
     return String.format("Линия ", points);
   }
+
+  public double getLength() {
+    double S = 0;
+    for (int i = 0; i < points.size() - 1; i++) {
+      S += points.get(i).distanceTo(points.get(i + 1));
+    }
+    return S;
+  }
 }
