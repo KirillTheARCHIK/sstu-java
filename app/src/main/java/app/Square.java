@@ -2,7 +2,7 @@ package app;
 
 import java.util.*;;
 
-public class Square {
+public class Square extends Figure {
   Point leftTopCorner;
   int size;
 
