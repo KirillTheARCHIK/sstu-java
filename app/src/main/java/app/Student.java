@@ -6,12 +6,11 @@ public class Student {
   private String name;
   private List<Integer> marks;
 
-  public Student(String name) throws Exception {
-    setName(name);
-    setMarks(new ArrayList<Integer>());
+  public Student(String name) {
+    this(name, new ArrayList<Integer>());
   }
 
-  public Student(String name, List<Integer> marks) throws Exception {
+  public Student(String name, List<Integer> marks) {
     setName(name);
     setMarks(marks);
   }
@@ -33,10 +32,10 @@ public class Student {
     return List.copyOf(marks);
   }
 
-  public void setMarks(List<Integer> marks) throws Exception {
+  public void setMarks(List<Integer> marks) {
     var marksCopy = List.copyOf(marks);
     if (marksCopy.stream().anyMatch((Integer mark) -> mark < 2 || mark > 5)) {
-      throw new Exception();
+      throw new IllegalArgumentException();
     }
     this.marks = marksCopy;
   }
