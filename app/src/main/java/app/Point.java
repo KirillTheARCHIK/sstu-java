@@ -13,4 +13,8 @@ public class Point {
   public String toString() {
     return String.format("{%d;%d}", x, y);
   }
+
+  public double distanceTo(Point other) {
+    return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+  }
 }
