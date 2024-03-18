@@ -37,7 +37,10 @@ public class Triangle extends Figure {
 
   @Override
   double getSquare() {
-    var a = p1.
-    var p = 
+    double a = p1.distanceTo(p2);
+    double b = p2.distanceTo(p3);
+    double c = p3.distanceTo(p1);
+    double p = (a + b + c) / 2;
+    return Math.sqrt(p * (p - a) * (p - b) * (p - c));
   }
 }
