@@ -1,14 +1,13 @@
 package app;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class City {
-  String name;
-  ArrayList<CityLink> cityLinks;
+  private String name;
+  private List<CityLink> cityLinks = new ArrayList<>();
 
-  public City(String name) throws Exception {
+  public City(String name) {
     setName(name);
-    setCityLinks(new ArrayList<>());
   }
 
   public String getName() {
@@ -19,20 +18,20 @@ public class City {
     this.name = name;
   }
 
-  public ArrayList<CityLink> getCityLinks() {
-    return cityLinks;
+  public List<CityLink> getCityLinks() {
+    return List.copyOf(cityLinks);
   }
 
-  public void setCityLinks(ArrayList<CityLink> cityLinks) throws Exception {
+  public void setCityLinks(List<CityLink> cityLinks) {
     this.cityLinks = new ArrayList<>();
     for (CityLink cityLink : cityLinks) {
       addCityLink(cityLink);
     }
   }
 
-  public void addCityLink(CityLink cityLink) throws Exception {
-    if (cityLinks.stream().anyMatch(cl -> cl.to == cityLink.to)) {
-      throw new Exception();
+  public void addCityLink(CityLink cityLink) {
+    if (cityLinks.stream().anyMatch(cl -> cl.getTo() == cityLink.getTo())) {
+      throw new IllegalArgumentException();
     }
     cityLinks.add(cityLink);
   }
