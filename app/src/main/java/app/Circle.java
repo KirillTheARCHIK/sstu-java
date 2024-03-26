@@ -13,7 +13,7 @@ public class Circle extends Figure {
     return center;
   }
 
-  public void setCenter(Point center) {
+  void setCenter(Point center) {
     this.center = center;
   }
 
@@ -21,7 +21,7 @@ public class Circle extends Figure {
     return radius;
   }
 
-  public void setRadius(double radius) {
+  void setRadius(double radius) {
     this.radius = radius;
   }
 
