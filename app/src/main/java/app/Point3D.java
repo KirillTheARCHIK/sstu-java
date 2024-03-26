@@ -12,7 +12,7 @@ public class Point3D extends Point2D {
     return z;
   }
 
-  public void setZ(int z) {
+  void setZ(int z) {
     this.z = z;
   }
 
