@@ -1,6 +1,9 @@
 package app;
 
-public class Triangle extends Figure {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Triangle extends Figure implements Polylineable {
   private Point p1;
   private Point p2;
   private Point p3;
@@ -42,5 +45,10 @@ public class Triangle extends Figure {
     double c = p3.distanceTo(p1);
     double p = (a + b + c) / 2;
     return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+  }
+
+  @Override
+  public PolyLine getPolyLine() {
+    return new ClosedPolyLine(new ArrayList<>(List.of(p1, p2, p3)));
   }
 }

@@ -2,7 +2,7 @@ package app;
 
 import java.util.*;
 
-public class PolyLine {
+public class PolyLine implements Polylineable {
   ArrayList<Point> points;
 
   public PolyLine() {
@@ -24,5 +24,10 @@ public class PolyLine {
       S += points.get(i).distanceTo(points.get(i + 1));
     }
     return S;
+  }
+
+  @Override
+  public PolyLine getPolyLine() {
+    return this;
   }
 }

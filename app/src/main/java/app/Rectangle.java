@@ -2,7 +2,7 @@ package app;
 
 import java.util.*;;
 
-public class Rectangle extends Figure {
+public class Rectangle extends Figure implements Polylineable {
   private Point leftTopCorner;
   private int width;
   private int height;
@@ -23,7 +23,7 @@ public class Rectangle extends Figure {
   }
 
   public PolyLine getPolyLine() {
-    return new PolyLine(new ArrayList<>(List.of(
+    return new ClosedPolyLine(new ArrayList<>(List.of(
         leftTopCorner,
         new Point(leftTopCorner.x + width, leftTopCorner.y),
         new Point(leftTopCorner.x + width, leftTopCorner.y + height),
