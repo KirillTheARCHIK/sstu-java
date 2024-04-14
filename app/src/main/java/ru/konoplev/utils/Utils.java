@@ -1,4 +1,4 @@
-package app.utils;
+package ru.konoplev.utils;
 
 public class Utils {
 
